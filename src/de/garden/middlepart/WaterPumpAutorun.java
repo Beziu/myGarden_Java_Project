@@ -2,8 +2,7 @@ package de.garden.middlepart;
 
 import static de.garden.sensors.SensorsSettings.*;
 
-import de.garden.backend.Ina219DB;
-import de.garden.backend.Ina219DataBaseFunctions;
+import de.garden.sensors.*;
 
 /**
  * Automation for the water pump.
@@ -21,14 +20,11 @@ public class WaterPumpAutorun extends Thread implements Runnable {
 		
 		for (int i = 0; i < LOOPS_NUMBER; i++) {
 			
-			Ina219DB inaRead = new Ina219DB();
-			Ina219DataBaseFunctions inaData = new Ina219DataBaseFunctions();
-			
-			inaData.insertData(inaRead);
-			System.out.println(inaRead);
+			WaterPump pump = new WaterPump();
+			pump.setState(true);
 			
 			try {
-				Thread.sleep(TIME_BETWEEN_READS);
+				Thread.sleep(TIME_PUMP_WORKS);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
