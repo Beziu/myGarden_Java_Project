@@ -9,7 +9,7 @@ public class WaterPumpTab extends JPanel {
 //	*******************************************
 
 	/**
-	 * 
+	 * Default serial UID
 	 */
 	private static final long serialVersionUID = 1L;
 	
