@@ -21,7 +21,7 @@ public class Bme250Autorun extends Bme250DB implements Runnable {
 	@Override
 	public void run() {
 		for (int i = 0; i < LOOPS_NUMBER; i++) {
-		
+	
 			Bme250DB bmeRead = new Bme250DB();
 			Bme250DataBaseFunctions bmeData = new Bme250DataBaseFunctions();
 		
