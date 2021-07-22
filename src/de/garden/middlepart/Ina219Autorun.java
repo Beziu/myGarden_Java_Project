@@ -13,7 +13,7 @@ import static de.garden.sensors.SensorsSettings.*;
  * @author grzeg
  *
  */
-public class Ina219Autorun extends Thread implements Runnable {
+public class Ina219Autorun extends Ina219DB implements Runnable {
 
 	/**
 	 * Used for Multitreading sensors reading simulations.
