@@ -10,9 +10,9 @@ public class SensorsAutoWriteDBTest {
 		Ina219Autorun ina = new Ina219Autorun();
 		SoilMoistureAutorun soil = new SoilMoistureAutorun();
 		
-		bme.start();
-		ina.start();
-		soil.start();
+		//bme.start();
+		//ina.start();
+		//soil.start();
 
 	}
 
