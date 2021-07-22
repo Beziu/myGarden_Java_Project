@@ -66,8 +66,8 @@ public class TabsOrganisator extends JTabbedPane {
 	 */
 	private void builder() {
 		
-		mainTab.setBackground(Color.DARK_GRAY);
-		soilTab.setBackground(Color.BLACK);
+		mainTab.setBackground(Color.LIGHT_GRAY);
+		soilTab.setBackground(Color.DARK_GRAY);
 		bmeTab.setBackground(Color.DARK_GRAY);
 		inaTab.setBackground(Color.DARK_GRAY);
 		pumpTab.setBackground(Color.DARK_GRAY);
