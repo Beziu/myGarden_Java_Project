@@ -86,8 +86,8 @@ public class Bme250DB extends Bme250 {
 	public String toString() {
 		return " Row= " + primaryKey 
 				+ ",\t temperature= " + temperature 
-				+ "°C,\t humidity= " + humidity 
-				+ "%,\t    pressure= " + pressure 
+				+ "°C,\t   humidity= " + humidity 
+				+ "%,\t  pressure= " + pressure 
 				+ "hPa,\t readTime= " + readTime;
 	}
 	
