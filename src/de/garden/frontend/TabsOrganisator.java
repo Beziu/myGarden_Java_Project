@@ -22,24 +22,29 @@ public class TabsOrganisator extends JTabbedPane {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Add element to Tabs in tabbed window
+	 * Add element MainTab to Tabs in tabbed window
 	 */
 	private MainTab mainTab = new MainTab();
 	
 	/**
-	 * Add element to Tabs in tabbed window
+	 * Add element SoilMoistureTab to Tabs in tabbed window
 	 */
 	private SoilMoistureTab soilTab = new SoilMoistureTab();
 	
 	/**
-	 * Add element to Tabs in tabbed window
+	 * Add element Bme250Tab to Tabs in tabbed window
 	 */
 	private Bme250Tab bmeTab = new Bme250Tab();
 	
 	/**
-	 * Add element to Tabs in tabbed window
+	 * Add element Ina219Tab to Tabs in tabbed window
 	 */
 	private Ina219Tab inaTab = new Ina219Tab();
+	
+	/**
+	 * Add element WaterPumpTab to Tabs in tabbed window
+	 */
+	private WaterPumpTab pumpTab = new WaterPumpTab();
 	
 //	*******************************************
 //	*				Konstruktors
@@ -65,16 +70,18 @@ public class TabsOrganisator extends JTabbedPane {
 		soilTab.setBackground(Color.BLACK);
 		bmeTab.setBackground(Color.DARK_GRAY);
 		inaTab.setBackground(Color.DARK_GRAY);
+		pumpTab.setBackground(Color.DARK_GRAY);
 		
 		add(mainTab, "Informations");
 		add(soilTab, "SoilMoisture");
 		add(bmeTab, "BME 250");
 		add(inaTab, "INA 219");
+		add(pumpTab, "Water Pump");
 	}
 	
 	/**
 	 * Getter to tab.
-	 * @return 
+	 * @return MainTab
 	 */
 	public MainTab getMainTab() {
 		return mainTab;
@@ -82,7 +89,7 @@ public class TabsOrganisator extends JTabbedPane {
 	
 	/**
 	 * Getter to tab.
-	 * @return 
+	 * @return SoilMoistureTab
 	 */
 	public SoilMoistureTab getSoilMoisureTab() {
 		return soilTab;
@@ -90,7 +97,7 @@ public class TabsOrganisator extends JTabbedPane {
 	
 	/**
 	 * Getter to tab.
-	 * @return 
+	 * @return Bme250Tab
 	 */
 	public Bme250Tab getBme250Tab() {
 		return bmeTab;
@@ -98,10 +105,18 @@ public class TabsOrganisator extends JTabbedPane {
 	
 	/**
 	 * Getter to tab.
-	 * @return 
+	 * @return Ina219Tab
 	 */
 	public Ina219Tab getIna219Tab() {
 		return inaTab;
+	}
+	
+	/**
+	 * Getter to tab.
+	 * @return WaterPumpTab
+	 */
+	public WaterPumpTab getWaterPumpTab() {
+		return pumpTab;
 	}
 	
 }

@@ -87,7 +87,7 @@ public class MainWindow extends JFrame {
 		menuSoil.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getSoilMoisureTab()));
 		menuBme.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getBme250Tab()));
 		menuIna.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getIna219Tab()));
-		menuPump.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder));
+		menuPump.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getWaterPumpTab()));
 	}
 
 	/**

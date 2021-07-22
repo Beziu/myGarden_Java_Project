@@ -17,7 +17,13 @@ public class WaterPump {
 
 	@Override
 	public String toString() {
-		return "WaterPump [state=" + state + "]";
+		String stateName;
+		if (state) {
+			stateName = "ON";
+		} else {
+			stateName = "OFF";
+		}
+		return "WaterPump state: " + stateName;
 	}
 
 	/**
