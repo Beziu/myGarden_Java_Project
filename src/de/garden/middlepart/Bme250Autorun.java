@@ -13,14 +13,13 @@ import static de.garden.sensors.SensorsSettings.*;
  * @author grzeg
  *
  */
-public class Bme250Autorun extends Thread implements Runnable {
+public class Bme250Autorun extends Bme250DB implements Runnable {
 
 	/**
 	 * Used for Multitreading sensors reading simulations.
 	 */
 	@Override
 	public void run() {
-		
 		for (int i = 0; i < LOOPS_NUMBER; i++) {
 		
 			Bme250DB bmeRead = new Bme250DB();

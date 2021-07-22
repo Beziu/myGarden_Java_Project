@@ -87,8 +87,8 @@ public class Bme250DB extends Bme250 {
 		return " Row= " + primaryKey 
 				+ ",\t temperature= " + temperature 
 				+ "°C,\t humidity= " + humidity 
-				+ "hPa,\t    pressure= " + pressure 
-				+ ",\t readTime= " + readTime;
+				+ "%,\t    pressure= " + pressure 
+				+ "hPa,\t readTime= " + readTime;
 	}
 	
 	/**
