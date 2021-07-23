@@ -71,39 +71,39 @@ public class MainTab extends JPanel {
 	private void unitFunctions() {
 		unit[0] = new JPanel();
 		unit[0].setLayout(new GridLayout(2, 1));
-		unit[0].add(new JLabel("Temperature", 0), 0);
-		unit[0].add(new JLabel("my" + bmeData.getTemperature(), 0), 1);
 		unit[0].setFont(new Font("Verdana",Font.BOLD, 30));
+		unit[0].add(new JLabel("Temperature", 0), 0);
+		unit[0].add(new JLabel("" + bmeData.getTemperature(), 0), 1);
 		add(unit[0], 0);
 		
 		unit[1] = new JPanel();
-		unit[1].setLayout(new GridLayout());
-		unit[1].add(new JLabel("Humidity", 0));
-		unit[1].add(new JLabel("" + bmeData.getHumidity()));
+		unit[1].setLayout(new GridLayout(2, 1));
+		unit[1].add(new JLabel("Humidity", 0), 0);
+		unit[1].add(new JLabel("" + bmeData.getHumidity(), 0), 1);
 		add(unit[1], 1);
 		
 		unit[2] = new JPanel();
-		unit[2].setLayout(new GridLayout());
-		unit[2].add(new JLabel("Pressure", 0));
-		unit[2].add(new JLabel("" + bmeData.getPressure()), 1);
+		unit[2].setLayout(new GridLayout(2, 1));
+		unit[2].add(new JLabel("Pressure", 0), 0);
+		unit[2].add(new JLabel("" + bmeData.getPressure(), 0), 1);
 		add(unit[2], 2);
 		
 		unit[3] = new JPanel();
-		unit[3].setLayout(new GridLayout());
-		unit[3].add(new JLabel("Temperature", 0));
-		unit[3].add(new JLabel("" + soilData.getTemperature()), 1);
+		unit[3].setLayout(new GridLayout(2, 1));
+		unit[3].add(new JLabel("Temperature", 0), 0);
+		unit[3].add(new JLabel("" + soilData.getTemperature(), 0), 1);
 		add(unit[3], 3);
 		
 		unit[4] = new JPanel();
-		unit[4].setLayout(new GridLayout());
-		unit[4].add(new JLabel("Sun Ligh", 0));
-		unit[4].add(new JLabel("" + soilData.getLux()), 1);
+		unit[4].setLayout(new GridLayout(2, 1));
+		unit[4].add(new JLabel("Sun Ligh", 0), 0);
+		unit[4].add(new JLabel("" + soilData.getLux(), 0), 1);
 		add(unit[4], 4);
 		
 		unit[5] = new JPanel();
-		unit[5].setLayout(new GridLayout());
-		unit[5].add(new JLabel("Soil Moisture", 0));
-		unit[5].add(new JLabel("" + soilData.getMoisture()), 1);
+		unit[5].setLayout(new GridLayout(2, 1));
+		unit[5].add(new JLabel("Soil Moisture", 0), 0);
+		unit[5].add(new JLabel("" + soilData.getMoisture(), 0), 1);
 		add(unit[5], 5);
 		
 		unit[6] = new JPanel();
