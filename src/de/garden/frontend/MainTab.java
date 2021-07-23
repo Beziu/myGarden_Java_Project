@@ -1,14 +1,25 @@
 package de.garden.frontend;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
+import de.garden.frontend.info.SoilMoistureOutput;
+import de.garden.backend.Bme250DB;
+import de.garden.backend.Bme250DataBaseFunctions;
+import de.garden.frontend.info.MyJLabel;
 import de.garden.middlepart.*;
 import de.garden.sensors.WaterPump;
+
+import static de.garden.sensors.SensorsSettings.*;
 
 
 /**
@@ -26,66 +37,115 @@ public class MainTab extends JPanel {
 //	*******************************************
 
 	WaterPump pump = new WaterPump();
-	Bme250Autorun bmeData = new Bme250Autorun();
+	//Bme250Autorun bmeData = new Bme250Autorun();
 	Ina219Autorun inaData = new Ina219Autorun();
 	SoilMoistureAutorun soilData = new SoilMoistureAutorun();
+
+	Bme250DB bmeRead = new Bme250DB();
+	Bme250DataBaseFunctions bmeDB = new Bme250DataBaseFunctions();
 	
-	Thread bme = new Thread(bmeData);
+	//Thread bme = new Thread(bmeData);
 	Thread soil = new Thread(soilData);
 	Thread ina = new Thread(inaData);
 	
+	SoilMoistureOutput temp = new SoilMoistureOutput();
 	
 	private JPanel[] unit = new JPanel[12];
 	private JButton btnStart = new JButton("Start");
 	private JButton btnStop = new JButton("Stop");
+	
+	private MyJLabel bmeAuto = new MyJLabel("");
+	public int bmeValue = 0;
+	
+
  	
 //	*******************************************
 //	*				Konstruktors
 //	*******************************************
 	
 	public MainTab() {
-		this.setLayout(new GridLayout(4, 4, 10, 10));
 		build();
-		unitFunctions();
-		buttonsFunction();
+
+		//System.out.println(bmeData);
+		System.out.println(bmeRead);
+		
+		
+		Thread actionStart = new Thread( () -> {
+			for (int i = 0; i < LOOPS_NUMBER; i++) {
+				
+				bmeRead = new Bme250DB();
+				bmeDB = new Bme250DataBaseFunctions();
+			
+				bmeDB.insertData(bmeRead);
+				System.out.println(bmeRead);
+				
+				bmeAuto.removeAll();
+				bmeAuto.paint
+				
+				try {
+					Thread.sleep(TIME_BETWEEN_READS);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		actionStart.start();
+		
+		bmeAuto = new MyJLabel("" + bmeRead.getPressure());
 	}
 
 //	*******************************************
 //	*				 Functions
 //	*******************************************
 
-	private void buttonsFunction() {
-		btnStart.addActionListener(e -> {
-			bme.start();
-			ina.start();
-			soil.start();
-		});
-		btnStop.addActionListener(e -> {
-			bme.stop();
-			ina.stop();
-			soil.stop();
-		});
+	private void build() {
+		
+
+		
+		//repaint();
+		buttonsFunction();
+		gridOrganize();
 		
 	}
 	
-	private void unitFunctions() {
+	private void buttonsFunction() {
+		btnStart.addActionListener(e -> {
+//			bme.start();
+//			ina.start();
+//			soil.start();
+		});
+		btnStop.addActionListener(e -> {
+			
+			System.out.println(bmeAuto.toString());
+			System.out.println("Read: " + bmeRead);
+			//System.out.println("Data: " + bmeData);
+//			bme.stop();
+//			ina.stop();
+//			soil.stop();
+		});
+	}
+
+	private void gridOrganize() {
+		this.setLayout(new GridLayout(4, 3));
+		
 		unit[0] = new JPanel();
 		unit[0].setLayout(new GridLayout(2, 1));
-		unit[0].setFont(new Font("Verdana",Font.BOLD, 30));
+		//unit[0].setFont(new Font("Verdana",Font.BOLD, 30));
 		unit[0].add(new JLabel("Temperature", 0), 0);
-		unit[0].add(new JLabel("" + bmeData.getTemperature(), 0), 1);
+		unit[0].add(new JLabel("" + bmeRead.getTemperature(), 0), 1);
 		add(unit[0], 0);
 		
 		unit[1] = new JPanel();
 		unit[1].setLayout(new GridLayout(2, 1));
 		unit[1].add(new JLabel("Humidity", 0), 0);
-		unit[1].add(new JLabel("" + bmeData.getHumidity(), 0), 1);
+		unit[1].add(new JLabel("" + bmeRead.getHumidity(), 0), 1);
 		add(unit[1], 1);
 		
 		unit[2] = new JPanel();
 		unit[2].setLayout(new GridLayout(2, 1));
 		unit[2].add(new JLabel("Pressure", 0), 0);
-		unit[2].add(new JLabel("" + bmeData.getPressure(), 0), 1);
+		//unit[2].add(new MyJLabel("" + bmeRead.getPressure()), 1);
+		unit[2].add(bmeAuto);
 		add(unit[2], 2);
 		
 		unit[3] = new JPanel();
@@ -109,7 +169,7 @@ public class MainTab extends JPanel {
 		unit[6] = new JPanel();
 		unit[6].setLayout(new GridLayout());
 		unit[6].add(new JLabel("Battery Volts", 0));
-		unit[6].add(new JLabel("" + inaData.getVolts()), 1);
+		unit[6].add(new MyJLabel("" + inaData.getVolts()), 1);
 		add(unit[6], 6);
 		
 		unit[7] = new JPanel();
@@ -138,16 +198,5 @@ public class MainTab extends JPanel {
 		add(unit[11], 11);
 		
 	}
-	
-	private void build() {
-		//add(new JLabel("Temperature" + bmeData.getTemperature(), 2));
-		
-		
-		
-	}
-
-
-	
-	
 
 }
