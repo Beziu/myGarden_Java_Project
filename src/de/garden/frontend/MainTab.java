@@ -1,5 +1,6 @@
 package de.garden.frontend;
 
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -69,9 +70,10 @@ public class MainTab extends JPanel {
 	
 	private void unitFunctions() {
 		unit[0] = new JPanel();
-		unit[0].setLayout(new GridLayout());
-		unit[0].add(new JLabel("Temperature", 0));
-		unit[0].add(new JLabel("my" + bmeData.getTemperature()), 1);
+		unit[0].setLayout(new GridLayout(2, 1));
+		unit[0].add(new JLabel("Temperature", 0), 0);
+		unit[0].add(new JLabel("my" + bmeData.getTemperature(), 0), 1);
+		unit[0].setFont(new Font("Verdana",Font.BOLD, 30));
 		add(unit[0], 0);
 		
 		unit[1] = new JPanel();
