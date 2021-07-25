@@ -44,6 +44,8 @@ public class MainTab extends JPanel {
 	Bme250DB bmeRead = new Bme250DB();
 	Bme250DataBaseFunctions bmeDB = new Bme250DataBaseFunctions();
 	
+	
+	GridLayout layout = new GridLayout(4, 3);
 	//Thread bme = new Thread(bmeData);
 	Thread soil = new Thread(soilData);
 	Thread ina = new Thread(inaData);
@@ -79,8 +81,8 @@ public class MainTab extends JPanel {
 				bmeDB.insertData(bmeRead);
 				System.out.println(bmeRead);
 				
-				bmeAuto.removeAll();
-				bmeAuto.paint
+				//bmeAuto.removeAll();
+				//bmeAuto.repaint();
 				
 				try {
 					Thread.sleep(TIME_BETWEEN_READS);
@@ -115,7 +117,8 @@ public class MainTab extends JPanel {
 //			soil.start();
 		});
 		btnStop.addActionListener(e -> {
-			
+			layout.removeLayoutComponent(bmeAuto);
+			bmeAuto.repaint();
 			System.out.println(bmeAuto.toString());
 			System.out.println("Read: " + bmeRead);
 			//System.out.println("Data: " + bmeData);
@@ -144,8 +147,8 @@ public class MainTab extends JPanel {
 		unit[2] = new JPanel();
 		unit[2].setLayout(new GridLayout(2, 1));
 		unit[2].add(new JLabel("Pressure", 0), 0);
-		//unit[2].add(new MyJLabel("" + bmeRead.getPressure()), 1);
-		unit[2].add(bmeAuto);
+		unit[2].add(new MyJLabel("" + bmeRead.getPressure()), 1);
+		//unit[2].add(bmeAuto);
 		add(unit[2], 2);
 		
 		unit[3] = new JPanel();
@@ -167,19 +170,19 @@ public class MainTab extends JPanel {
 		add(unit[5], 5);
 		
 		unit[6] = new JPanel();
-		unit[6].setLayout(new GridLayout());
-		unit[6].add(new JLabel("Battery Volts", 0));
+		unit[6].setLayout(new GridLayout(2, 1));
+		unit[6].add(new JLabel("Battery Volts", 0), 0);
 		unit[6].add(new MyJLabel("" + inaData.getVolts()), 1);
 		add(unit[6], 6);
 		
 		unit[7] = new JPanel();
-		unit[7].setLayout(new GridLayout());
-		unit[7].add(new JLabel("Battery Ampers", 0));
+		unit[7].setLayout(new GridLayout(2, 1));
+		unit[7].add(new JLabel("Battery Ampers", 0), 0);
 		unit[7].add(new JLabel("" + inaData.getAmpers()), 1);
 		add(unit[7], 7);
 		
 		unit[8] = new JPanel();
-		unit[8].setLayout(new GridLayout());
+		//unit[8].setLayout(new GridLayout());
 		//unit[8].add(new JLabel("Pump Status: ", 0));
 		unit[8].add(new JLabel(" " + pump.toString()));
 		add(unit[8], 8);
