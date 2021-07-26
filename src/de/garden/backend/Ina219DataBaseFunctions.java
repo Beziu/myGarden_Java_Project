@@ -29,6 +29,11 @@ public class Ina219DataBaseFunctions implements DataBaseDAO {
 	 */
 	private List<Ina219DB> allReadedValues = new ArrayList<Ina219DB>();
 	
+	/**
+	 * Last primarykey;
+	 */
+	private int lastID;
+	
 //	*******************************************
 //	*				 Functions
 //	*******************************************
@@ -113,6 +118,28 @@ public class Ina219DataBaseFunctions implements DataBaseDAO {
 			my += "\n";
 		}
 		return my;
+	}
+	
+	/**
+	 * Getter to lastID. 
+	 * @return last primaryKey value from table
+	 */
+	public int getLastID() {
+		try (Connection connection = DriverManager.getConnection(ADDRESS, USER, PASSWORT)) {
+			
+			Statement statement = connection.createStatement();
+			String sqlQuestion = "SELECT @@IDENTITY";// FROM " + SM_TABLE;
+			ResultSet answerDB = statement.executeQuery(sqlQuestion);
+			
+			lastID = answerDB.getInt("SOIL_ID");
+		
+//			System.out.println("INA219 lastID: " + lastID);
+			
+		} catch (SQLException e) {
+			System.out.println("Someting goes wrong :( !!!");
+			e.printStackTrace();
+		}
+		return lastID;
 	}
 
 }

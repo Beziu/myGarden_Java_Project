@@ -29,6 +29,11 @@ public class Bme250DataBaseFunctions implements DataBaseDAO {
 	 */
 	private List<Bme250DB> allReadedValues = new ArrayList<Bme250DB>();
 	
+	/**
+	 * Last primarykey;
+	 */
+	private int lastID;
+	
 //	*******************************************
 //	*				 Functions
 //	*******************************************
@@ -115,6 +120,28 @@ public class Bme250DataBaseFunctions implements DataBaseDAO {
 			my += "\n";
 		}
 		return my;
+	}
+	
+	/**
+	 * Getter to lastID. 
+	 * @return last primaryKey value from table
+	 */
+	public int getLastID() {
+		try (Connection connection = DriverManager.getConnection(ADDRESS, USER, PASSWORT)) {
+			
+			Statement statement = connection.createStatement();
+			String sqlQuestion = "SELECT @@IDENTITY";// FROM " + SM_TABLE;
+			ResultSet answerDB = statement.executeQuery(sqlQuestion);
+			
+			lastID = Integer.valueOf(answerDB.toString());
+		
+//			System.out.println("BME250 lastID: " + lastID);
+			
+		} catch (SQLException e) {
+			System.out.println("Someting goes wrong :( !!!");
+			e.printStackTrace();
+		}
+		return lastID;
 	}
 	
 }

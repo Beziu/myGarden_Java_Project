@@ -28,6 +28,11 @@ public class SoilMoistureDataBaseFunctions implements DataBaseDAO {
 	 * List all values from the sensor.
 	 */
 	private List<SoilMoistureDB> allReadedValues = new ArrayList<SoilMoistureDB>();
+	
+	/**
+	 * Last primarykey;
+	 */
+	private int lastID;
 
 //	*******************************************
 //	*				 Functions
@@ -116,6 +121,28 @@ public class SoilMoistureDataBaseFunctions implements DataBaseDAO {
 			my += "\n";
 		}
 		return my;
+	}
+
+	/**
+	 * Getter to lastID. 
+	 * @return last primaryKey value from table
+	 */
+	public int getLastID() {
+		try (Connection connection = DriverManager.getConnection(ADDRESS, USER, PASSWORT)) {
+			
+			Statement statement = connection.createStatement();
+			String sqlQuestion = "SELECT @@IDENTITY";// FROM " + SM_TABLE;
+			ResultSet answerDB = statement.executeQuery(sqlQuestion);
+			
+			lastID = answerDB.getInt("SOIL_ID");
+		
+//			System.out.println("SoilMoisture lastID: " + lastID);
+			
+		} catch (SQLException e) {
+			System.out.println("Someting goes wrong :( !!!");
+			e.printStackTrace();
+		}
+		return lastID;
 	}
 
 }
