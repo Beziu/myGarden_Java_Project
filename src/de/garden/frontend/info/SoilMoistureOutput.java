@@ -1,15 +1,12 @@
 package de.garden.frontend.info;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import de.garden.middlepart.*;
-import de.garden.sensors.WaterPump;
 
 
 /**
@@ -25,6 +22,11 @@ public class SoilMoistureOutput extends JPanel {
 //	*******************************************
 //	*				  Attributs
 //	*******************************************
+
+	/**
+	 * Default seial version UID
+	 */
+	private static final long serialVersionUID = 1L;
 
 	SoilMoistureAutorun soilData = new SoilMoistureAutorun();
 	
