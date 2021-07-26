@@ -13,10 +13,29 @@ import java.util.Objects;
  */
 public class WaterPump {
 	
+	/**
+	 * State of the water pump
+	 */
 	private boolean state;
 
+	/**
+	 * Standard toString function
+	 */
 	@Override
 	public String toString() {
+		String stateName;
+		if (state) {
+			stateName = "ON";
+		} else {
+			stateName = "OFF";
+		}
+		return stateName;
+	}
+	
+	/**
+	 * ToString in Console view
+	 */
+	public String toStringConsole() {
 		String stateName;
 		if (state) {
 			stateName = "ON";
