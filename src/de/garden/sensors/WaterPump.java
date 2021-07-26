@@ -16,7 +16,7 @@ public class WaterPump {
 	/**
 	 * State of the water pump
 	 */
-	private boolean state;
+	protected boolean state;
 
 	/**
 	 * Standard toString function
