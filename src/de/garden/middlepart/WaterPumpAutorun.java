@@ -10,7 +10,7 @@ import de.garden.sensors.*;
  * @author grzeg
  *
  */
-public class WaterPumpAutorun extends Thread implements Runnable {
+public class WaterPumpAutorun extends WaterPump implements Runnable {
 
 	/**
 	 * Used for Multitreading sensors reading simulations.
@@ -18,17 +18,19 @@ public class WaterPumpAutorun extends Thread implements Runnable {
 	@Override
 	public void run() {
 		
-		for (int i = 0; i < LOOPS_NUMBER; i++) {
-			
-			WaterPump pump = new WaterPump();
-			pump.setState(true);
+//		for (int i = 0; i < LOOPS_NUMBER; i++) {
+//			
+//			WaterPump pump = new WaterPump();
+//			pump.setState(true);
 			
 			try {
 				Thread.sleep(TIME_PUMP_WORKS);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
+			
+			setState(false);
+//		}
 		
 	}
 	
