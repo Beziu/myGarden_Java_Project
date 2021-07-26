@@ -86,6 +86,17 @@ public class SoilMoistureDB extends SoilMoisture {
 				+ "%,\t moisture=" + getMoisture() 
 				+ "%,\t           readTime= " + readTime;
 	}
+	
+	/**
+	 * toStringTabel() is moded toString special to console viev
+	 */
+	public String toStringConsole() {
+		return " SoilMoisture Sensor Read [ " 
+				+ "Temperature= " + getTemperature() 
+				+ "°C,\t Lux= " + getLux() 
+				+ "%,\t Moisture=" + getMoisture() 
+				+ "%,\t Read Time= " + readTime + " ]";
+	}
 
 	/**
 	 * Getter for primaryKey

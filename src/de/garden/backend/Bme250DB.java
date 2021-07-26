@@ -84,11 +84,22 @@ public class Bme250DB extends Bme250 {
 	 */
 	@Override
 	public String toString() {
-		return " Row= " + primaryKey 
-				+ ",\t temperature= " + temperature 
-				+ "°C,\t   humidity= " + humidity 
-				+ "%,\t  pressure= " + pressure 
-				+ "hPa,\t readTime= " + readTime;
+		return " Index= " + primaryKey 
+				+ ",\t Temperature= " + temperature 
+				+ "°C,\t   Humidity= " + humidity 
+				+ "%,\t  Pressure= " + pressure 
+				+ "hPa,\t Read Time= " + readTime;
+	}
+	
+	/**
+	 * toStringTabel() is moded toString special to console viev
+	 */
+	public String toStringConsole() {
+		return " BME250 Sensor Read [ " 
+				+ "Temperature= " + temperature 
+				+ "°C,\t Humidity= " + humidity 
+				+ "%,\t Pressure= " + pressure 
+				+ "hPa,\t Read Time= " + readTime + " ]";
 	}
 	
 	/**

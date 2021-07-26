@@ -81,9 +81,19 @@ public class Ina219DB extends Ina219 {
 	@Override
 	public String toString() {
 		return " Index= " + primaryKey
-				+ ",\t volts= " + volts 
-				+ "V,\t    ampers= " + ampers 
-				+ "A,\t readTime= " + readTime + "]";
+				+ ", Volts= " + volts 
+				+ "V,\t    Ampers= " + ampers 
+				+ "A,\t Read Time= " + readTime;
+	}
+	
+	/**
+	 * toStringTabel() is moded toString special to console viev
+	 */
+	public String toStringConsole() {
+		return " Ina219 Sensor Read [ "
+				+ "Volts= " + volts 
+				+ "V,\t Ampers= " + ampers 
+				+ "A,\t Read Time= " + readTime + " ]";
 	}
 	
 	/**
