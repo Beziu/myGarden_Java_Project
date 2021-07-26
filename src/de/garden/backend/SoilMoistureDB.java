@@ -80,7 +80,7 @@ public class SoilMoistureDB extends SoilMoisture {
 	 */
 	@Override
 	public String toString() {
-		return " Row= " + primaryKey 
+		return " Index= " + primaryKey 
 				+ ",\t Temperature= " + getTemperature() 
 				+ "°C,\t lux= " + getLux() 
 				+ "%,\t moisture=" + getMoisture() 
