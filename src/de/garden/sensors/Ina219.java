@@ -44,8 +44,8 @@ public class Ina219 {
 		rest *= 100;
 		rest = Math.round(rest);
 		rest /= 100;
-		this.volts = 3.33 + rest;
 		this.ampers = rest;
+		this.volts = 3.33 + ampers;
 	}
 	
 	/**
