@@ -5,7 +5,9 @@ import static de.garden.sensors.SensorsSettings.*;
 import de.garden.sensors.*;
 
 /**
- * Automation for the water pump.
+ * This class is extends WaterPump class<br><br>
+ * 
+ * It have automation for the water pump.<br><br>
  * 
  * @author grzeg
  *
@@ -30,6 +32,7 @@ public class WaterPumpAutorun extends WaterPump implements Runnable {
 			}
 			
 			setState(false);
+			System.out.println(toStringConsole());
 //		}
 		
 	}

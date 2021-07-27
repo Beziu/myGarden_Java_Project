@@ -91,7 +91,7 @@ public class MainWindow extends JFrame {
 	}
 
 	/**
-	 * Function organize a menu bar
+	 * Function organize a menu bar elements
 	 */
 	private void menuBuilder() {
 		menuBar.add(menuFile);

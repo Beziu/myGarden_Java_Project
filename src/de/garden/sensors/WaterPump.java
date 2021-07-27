@@ -3,10 +3,10 @@ package de.garden.sensors;
 import java.util.Objects;
 
 /**
- * Stering the water pump for plants the garden
+ * Stering the water pump for plants the garden<br><br>
  * 
  * Can switch on and off pump for watering garden 
- * and check the switch status
+ * and check the switch status<br><br>
  *  
  * @author grzeg
  *
