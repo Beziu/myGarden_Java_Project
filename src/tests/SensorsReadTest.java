@@ -8,7 +8,7 @@ public class SensorsReadTest {
 		
 		SoilMoistureDB newData = new SoilMoistureDB();
 		System.out.println(newData);
-		System.out.println(newData.skyLooks());
+		System.out.println(newData.wetter());
 		
 		Bme250DB bmeData = new Bme250DB();
 		System.out.println(bmeData);
