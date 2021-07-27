@@ -8,6 +8,10 @@ package de.garden.sensors;
  */
 public enum WetterInformation {
 	
+//	*******************************************
+//	*				  Attributs
+//	*******************************************
+	
 	NICE("It is nice"), 
 	BAD("The weather is bad"), 
 	CLOUD("It is cloudy"), 
@@ -18,13 +22,18 @@ public enum WetterInformation {
 	COLD("It is cold"),
 	HOT("It is hot"),
 	DRY("It is dry"),
-	HUMID("It is humid");
+	HUMID("It is humid"),
+	CHARGING("Battery charging");
 	
 	/**
 	 * text describing the weather 
 	 */
 	private String text;
 
+//	*******************************************
+//	*				Konstruktors
+//	*******************************************
+	
 	/**
 	 * Standard constructor
 	 * @param text
@@ -33,6 +42,10 @@ public enum WetterInformation {
 		this.text = text;
 	}
 
+//	*******************************************
+//	*				 Functions
+//	*******************************************
+	
 	/**
 	 * Getter for the wetter description
 	 * @return the text
