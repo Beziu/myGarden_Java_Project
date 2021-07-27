@@ -1,5 +1,7 @@
 package de.garden.sensors;
 
+import static de.garden.sensors.WetterInformation.*;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -70,6 +72,20 @@ public class Bme250 {
 //	*******************************************
 //	*				 Functions
 //	*******************************************	
+	
+	
+	public String wetter() {
+		if (humidity < 30) {
+			return DRY.getText();
+		}
+		else if (humidity >=30 & humidity < 74) {
+			return NICE.getText();
+		}
+		else {
+			return RAIN.getText();
+		}
+	}
+	
 	
 	/**
 	 * Getter for temperature

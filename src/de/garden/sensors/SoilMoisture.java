@@ -1,5 +1,7 @@
 package de.garden.sensors;
 
+import static de.garden.sensors.WetterInformation.*;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -21,19 +23,19 @@ public class SoilMoisture {
 	/**
 	 * Actual temperature in Celcius
 	 */
-	private double temperature;
+	protected double temperature;
 	
 	/**
 	 * Actual sunlight value, useful to check night or day<br>
 	 * Possible valuess from 0 to 100
 	 */
-	private int lux;
+	protected int lux;
 	
 	/**
 	 * Actual soil moisture<br>
 	 * Possible values between 0-100
 	 */
-	private int moisture;
+	protected int moisture;
 
 //	*******************************************
 //	*				Konstruktors
@@ -83,23 +85,55 @@ public class SoilMoisture {
 	 * 
 	 * @return how cloudy is right now
 	 */
-	public String skyLooks() {
-		String retVal = "";
-		int skyVal = getLux();
-		if (skyVal < 24) {
-			retVal = "no sunlight, maybe night";
+	public String wetterLux() {
+		if (lux < 24) {
+			return DARK.getText();
 		}
-		else if (skyVal >=25 & skyVal < 49) {
-			retVal = "cloudy sky, no sunlight, maybe rain come";
+		else if (lux >=25 & lux < 50) {
+			return CLOUD.getText();
 		}
-		else if (skyVal >=50 & skyVal < 74) {
-			retVal = "partly clouds sky";
+		else if (lux >=50 & lux < 75) {
+			return PARTCLOUD.getText();
 		}
 		else {
-			retVal = "fullsunlight, nice wether, no clouds on the sky";
+			return SUN.getText();
 		}
-		return retVal;
 	}
+	
+	/**
+	 * Here we use sunlight 'lux' parametr to know how<br> 
+	 * cloudy is sky right now<br><br>
+	 * 
+	 * We hawe 4 strings outputs possibilitys<br>
+	 * '0 - 24'   no sunlight, night<br>
+	 * '25 - 49'  cloudy sky, no sunlight, maybe rain come<br>
+	 * '50 - 74'  partly clouds and sun<br>
+	 * '75 - 100' fullsunlight, day, no clouds<br><br>
+	 * 
+	 * @return how dry erd is right now
+	 */
+	public String wetterErd() {
+		if (moisture < 50) {
+			return DRY.getText();
+		}
+		else {
+			return NICE.getText();
+		}
+	}
+	
+	public String wetterTemp() {
+		if (temperature < 15) {
+			return COLD.getText();
+		}
+		else if (temperature >=15 & temperature < 22) {
+			return SUN.getText();
+		}
+		else {
+			return HOT.getText();
+		}
+	}
+	
+	
 	
 	/**
 	 * Getter for temperature
