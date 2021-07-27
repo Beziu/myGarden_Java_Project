@@ -88,8 +88,8 @@ public class WaterPumpTab extends JPanel implements ActionListener {
 		btnON.addActionListener(this);
 		btnOFF.addActionListener(this);
 		
-		btnON.setFont(new Font("Verdana",Font.BOLD, 30));
-		btnOFF.setFont(new Font("Verdana", Font.BOLD, 30));
+		btnON.setFont(new Font("Verdana",Font.BOLD, 40));
+		btnOFF.setFont(new Font("Verdana", Font.BOLD, 40));
 		
 		btnON.setForeground(Color.RED);
 		btnOFF.setForeground(new Color(0, 150, 0));
@@ -104,12 +104,12 @@ public class WaterPumpTab extends JPanel implements ActionListener {
 			btnON.setEnabled(false);
 			btnOFF.setEnabled(true);
 			pump.setState(false);
-			System.out.println(pump.toString());
+			System.out.println(pump.toStringConsole());
 		} else {
 			btnON.setEnabled(true);
 			btnOFF.setEnabled(false);
 			pump.setState(true);
-			System.out.println(pump.toString());
+			System.out.println(pump.toStringConsole());
 		}
 	}
 	
