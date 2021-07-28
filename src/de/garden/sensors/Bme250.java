@@ -59,9 +59,9 @@ public class Bme250 {
 	/**	 
 	 * Standard constructor.<br>
 	 * In this class construktor we can add values manual. <br>
-	 * @param temperature
-	 * @param humidity
-	 * @param pressure
+	 * @param temperature is temperarure
+	 * @param humidity is humidity
+	 * @param pressure is perssure
 	 */
 	public Bme250(double temperature, int humidity, int pressure) {
 		this.temperature = temperature;

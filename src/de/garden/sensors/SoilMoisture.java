@@ -48,6 +48,7 @@ public class SoilMoisture {
 	public SoilMoisture() {
 		Random lotto= new Random();
 		double rest = lotto.nextDouble();
+		// short output to 2 places after 0,01
 		rest *= 100;
 		rest = Math.round(rest);
 		rest /= 100;
@@ -59,9 +60,9 @@ public class SoilMoisture {
 	/**
 	 * Standard constructor.<br>
 	 * In this class construktor we can add values manual <br>
-	 * @param temperature
-	 * @param lux
-	 * @param moisture
+	 * @param temperature is ntemperature
+	 * @param lux is sunlight
+	 * @param moisture is soil moisture
 	 */
 	public SoilMoisture(double temperature, int lux, int moisture) {
 		this.temperature = temperature;
@@ -182,7 +183,8 @@ public class SoilMoisture {
 	}
 
 	/**
-	 * @param moinsure is the moinsure to set
+	 * Setter for soil moisture
+	 * @param moisture is the moinsure to set
 	 */
 	public void setMoisture(int moisture) {
 		this.moisture = moisture;

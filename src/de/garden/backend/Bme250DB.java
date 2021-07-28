@@ -47,9 +47,9 @@ public class Bme250DB extends Bme250 {
 	
 	/**
 	 * Recovery class connstructor from Parent class.
-	 * @param temperature
-	 * @param humidity
-	 * @param pressure
+	 * @param temperature is temperature
+	 * @param humidity is humidity
+	 * @param pressure is pressure
 	 */
 	public Bme250DB(double temperature, int humidity, int pressure) {
 		this.temperature = temperature;
@@ -59,11 +59,11 @@ public class Bme250DB extends Bme250 {
 	
 	/**
 	 * All values class constructor, can be used to manual writing arguments
-	 * @param primaryKey
-	 * @param temperature
-	 * @param humidity
-	 * @param pressure
-	 * @param readTime
+	 * @param primaryKey is ID in database
+	 * @param temperature is temperature
+	 * @param humidity is humidity
+	 * @param pressure is pressure
+	 * @param readTime is time and date
 	 */
 	public Bme250DB(int primaryKey, double temperature, int humidity, int pressure, LocalDateTime readTime) {
 		this.primaryKey = primaryKey;
@@ -93,6 +93,7 @@ public class Bme250DB extends Bme250 {
 	
 	/**
 	 * toStringTabel() is moded toString special to console viev
+	 * @return string to the console
 	 */
 	public String toStringConsole() {
 		return " BME250 Sensor Read [ " 
@@ -112,7 +113,7 @@ public class Bme250DB extends Bme250 {
 
 	/**
 	 * Setter for primaryKey, used in class constructor
-	 * @param primaryKey
+	 * @param primaryKey is table ID in database
 	 */
 	public void setPrimaryKey(int primaryKey) {
 		this.primaryKey = primaryKey;
@@ -128,7 +129,7 @@ public class Bme250DB extends Bme250 {
 
 	/**
 	 * Setter date and time, used in class constructor
-	 * @param readTime
+	 * @param readTime is date and time
 	 */
 	public void setReadTime(LocalDateTime readTime) {
 		this.readTime = readTime;

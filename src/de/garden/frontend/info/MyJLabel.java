@@ -33,7 +33,7 @@ public class MyJLabel extends JLabel {
 	
 	/**
 	 * Class constructor
-	 * @param text
+	 * @param text is text
 	 */
 	public MyJLabel(String text) {
 		super(text);
@@ -55,6 +55,7 @@ public class MyJLabel extends JLabel {
 	
 	/**
 	 * Getter toString()
+	 * @return text in string
 	 */
 	public String toString() {
 		return text;

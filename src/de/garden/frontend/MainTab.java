@@ -126,7 +126,9 @@ public class MainTab extends JPanel {
 	 */	
 	private JLabel[] labelWetter = new JLabel[4];
 	
-	
+	/**
+	 * List all values from the BME250 sensor.
+	 */
 	List<Bme250DB> bmeList = new ArrayList<Bme250DB>();
 
  	

@@ -12,19 +12,46 @@ public enum WetterInformation {
 //	*				  Attributs
 //	*******************************************
 	
+	/** wetter description */
 	NICE("It is nice"), 
-	BAD("The weather is bad"), 
+	
+	/** wetter description */
+	BAD("The weather is bad"),
+	
+	/** wetter description */
 	CLOUD("It is cloudy"), 
-	PARTCLOUD("Partly cloudy"), 
+	
+	/** wetter description */
+	PARTCLOUD("Partly cloudy"),
+	
+	/** wetter description */
 	RAIN("It is raining"), 
+	
+	/** wetter description */
 	SUN("Sunny day"), 
+	
+	/** wetter description */
 	DARK("It is night"),
+	
+	/** wetter description */
 	COLD("It is cold"),
+	
+	/** wetter description */
 	HOT("It is hot"),
+	
+	/** wetter description */
 	DRY("Erde is dry"),
+	
+	/** wetter description */
 	WET("Erde is wet"),
+	
+	/** wetter description */
 	AIR("Air is to dry"),
+	
+	/** wetter description */
 	HUMID("It is humid"),
+	
+	/** wetter description */
 	CHARGING("Battery charging");
 	
 	/**
@@ -38,7 +65,7 @@ public enum WetterInformation {
 	
 	/**
 	 * Standard constructor
-	 * @param text
+	 * @param text is string 
 	 */
 	private WetterInformation(String text) {
 		this.text = text;

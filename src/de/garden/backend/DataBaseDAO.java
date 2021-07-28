@@ -26,7 +26,7 @@ public interface DataBaseDAO {
 	
 	/**
 	 * Returns the last key entered in the database
-	 * @return
+	 * @return last database entry primary key
 	 */
 	int getLastID();
 	

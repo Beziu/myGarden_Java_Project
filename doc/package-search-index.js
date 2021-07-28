@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.garden.backend"},{"l":"de.garden.frontend"},{"l":"de.garden.frontend.info"},{"l":"de.garden.main"},{"l":"de.garden.middlepart"},{"l":"de.garden.sensors"},{"l":"tests"}];updateSearchResults();

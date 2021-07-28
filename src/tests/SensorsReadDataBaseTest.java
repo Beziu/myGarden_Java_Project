@@ -2,8 +2,17 @@ package tests;
 
 import de.garden.backend.*;
 
+/**
+ * Reading from database test file <br><br>
+ * @author grzeg
+ *
+ */
 public class SensorsReadDataBaseTest {
 	
+	/**
+	 * Run constructor to test
+	 * @param args is not used
+	 */
 	public static void main(String[] args) {
 		
 		//******************************************

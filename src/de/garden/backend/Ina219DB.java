@@ -47,8 +47,8 @@ public class Ina219DB extends Ina219 {
 	
 	/**
 	 * Recovery class connstructor from Parent class.
-	 * @param volts
-	 * @param ampers
+	 * @param volts is volts
+	 * @param ampers is ampers
 	 */
 	public Ina219DB(double volts, double ampers) {
 		this.volts = volts;
@@ -57,10 +57,10 @@ public class Ina219DB extends Ina219 {
 	
 	/**
 	 * All values class constructor, can be used to manual writing arguments
-	 * @param primaryKey
-	 * @param volts
-	 * @param ampers
-	 * @param dt
+	 * @param primaryKey is ID in database
+	 * @param volts is volts
+	 * @param ampers is ampers
+	 * @param readTime is data and time
 	 */
 	public Ina219DB(int primaryKey, double volts, double ampers, LocalDateTime readTime) {
 		this.primaryKey = primaryKey;
@@ -77,6 +77,7 @@ public class Ina219DB extends Ina219 {
 	 * This function is override, 
 	 * becouse it have all values, 
 	 * includes values from Parent class.
+	 * @return string to the table view
 	 */
 	@Override
 	public String toString() {
@@ -88,6 +89,7 @@ public class Ina219DB extends Ina219 {
 	
 	/**
 	 * toStringTabel() is moded toString special to console viev
+	 * @return string to the console
 	 */
 	public String toStringConsole() {
 		return " Ina219 Sensor Read [ "
@@ -106,7 +108,7 @@ public class Ina219DB extends Ina219 {
 
 	/**
 	 * Setter for primaryKey, used in class constructor
-	 * @param primaryKey
+	 * @param primaryKey is table ID in database
 	 */
 	public void setPrimaryKey(int primaryKey) {
 		this.primaryKey = primaryKey;
@@ -122,7 +124,7 @@ public class Ina219DB extends Ina219 {
 
 	/**
 	 * Setter date and time, used in class constructor
-	 * @param readTime
+	 * @param readTime is date and time
 	 */
 	public void setReadTime(LocalDateTime readTime) {
 		this.readTime = readTime;

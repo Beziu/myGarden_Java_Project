@@ -2,8 +2,17 @@ package tests;
 
 import de.garden.backend.*;
 
+/**
+ * Reading from sensor test file <br><br>
+ * @author grzeg
+ *
+ */
 public class SensorsReadTest {
 
+	/**
+	 * Run constructor to test
+	 * @param args is not used
+	 */
 	public static void main(String[] args) {
 		
 		SoilMoistureDB newData = new SoilMoistureDB();

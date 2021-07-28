@@ -47,9 +47,9 @@ public class SoilMoistureDB extends SoilMoisture {
 
 	/**
 	 * Recovery class connstructor from Parent class.
-	 * @param temperature
-	 * @param lux
-	 * @param moisture
+	 * @param temperature is temperature
+	 * @param lux is sunlight
+	 * @param moisture is soil moisture 
 	 */
 	public SoilMoistureDB(double temperature, int lux, int moisture) {
 		super(temperature, lux, moisture);
@@ -57,11 +57,11 @@ public class SoilMoistureDB extends SoilMoisture {
 	
 	/**
 	 * All values class constructor, can be used to manual writing arguments
-	 * @param primaryKey
-	 * @param temperature
-	 * @param lux
-	 * @param moisture
-	 * @param dt
+	 * @param primaryKey is ID in database
+	 * @param temperature is temperature
+	 * @param lux is sun light
+	 * @param moisture is soil moisture
+	 * @param dt is date and time
 	 */
 	public SoilMoistureDB(int primaryKey, double temperature, int lux, int moisture, LocalDateTime dt) {
 		super(temperature, lux, moisture);
@@ -77,6 +77,7 @@ public class SoilMoistureDB extends SoilMoisture {
 	 * This function is override, 
 	 * becouse it have all values, 
 	 * includes values from Parent class.
+	 * @return string to the table view
 	 */
 	@Override
 	public String toString() {
@@ -89,6 +90,7 @@ public class SoilMoistureDB extends SoilMoisture {
 	
 	/**
 	 * toStringTabel() is moded toString special to console viev
+	 * @return string to the console
 	 */
 	public String toStringConsole() {
 		return " SoilMoisture Sensor Read [ " 
@@ -108,7 +110,7 @@ public class SoilMoistureDB extends SoilMoisture {
 
 	/**
 	 * Setter for primaryKey, used in class constructor
-	 * @param primaryKey
+	 * @param primaryKey is ID in database
 	 */
 	public void setPrimaryKey(int primaryKey) {
 		this.primaryKey = primaryKey;
@@ -124,7 +126,7 @@ public class SoilMoistureDB extends SoilMoisture {
 
 	/**
 	 * Setter date and time, used in class constructor
-	 * @param readTime
+	 * @param readTime is date and time
 	 */
 	public void setReadTime(LocalDateTime readTime) {
 		this.readTime = readTime;

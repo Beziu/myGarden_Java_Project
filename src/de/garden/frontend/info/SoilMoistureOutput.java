@@ -28,17 +28,28 @@ public class SoilMoistureOutput extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Initialitze a soilMonsture element
+	 */
 	SoilMoistureAutorun soilData = new SoilMoistureAutorun();
 	
+	/**
+	 * One times in SoilMoisture sensor readings
+	 */
 	Thread soil = new Thread(soilData);
 
+	/**
+	 * Array of JPanels in grid
+	 */
 	private JPanel[] unit = new JPanel[3];
-
  	
 //	*******************************************
 //	*				Konstruktors
 //	*******************************************
 	
+	/**
+	 * Constructor in grid layout as grid element
+	 */
 	public SoilMoistureOutput() {
 		this.setLayout(new GridLayout(1, 3));
 		build();
@@ -72,10 +83,9 @@ public class SoilMoistureOutput extends JPanel {
 
 	}
 	
+	
 	private void build() {	
 		repaint();
 	}
-
-	
 
 }

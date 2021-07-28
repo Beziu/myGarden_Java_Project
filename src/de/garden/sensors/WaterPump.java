@@ -20,6 +20,7 @@ public class WaterPump {
 
 	/**
 	 * Standard toString function
+	 * @return string ON/OFF water pump state
 	 */
 	@Override
 	public String toString() {
@@ -34,6 +35,7 @@ public class WaterPump {
 	
 	/**
 	 * ToString in Console view
+	 * @return string ON/OFF water pump state in console
 	 */
 	public String toStringConsole() {
 		String stateName;

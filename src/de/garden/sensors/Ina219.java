@@ -51,8 +51,8 @@ public class Ina219 {
 	/**
 	 * Standard constructor.<br>
 	 * In this class construktor we can add values manual. <br>
-	 * @param volts
-	 * @param ampers
+	 * @param volts is volts
+	 * @param ampers is ampers
 	 */
 	public Ina219(double volts, double ampers) {
 		this.volts = volts;
