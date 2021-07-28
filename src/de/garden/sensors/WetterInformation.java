@@ -21,7 +21,9 @@ public enum WetterInformation {
 	DARK("It is night"),
 	COLD("It is cold"),
 	HOT("It is hot"),
-	DRY("It is dry"),
+	DRY("Erde is dry"),
+	WET("Erde is wet"),
+	AIR("Air is to dry"),
 	HUMID("It is humid"),
 	CHARGING("Battery charging");
 	
