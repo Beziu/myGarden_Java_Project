@@ -222,8 +222,8 @@ public class MainTab extends JPanel {
 		labelValue[7].setText(inaSensorRead.getAmpers() + "A");
 		pumpAuto.isState();
 		labelValue[8].setText(pumpAuto.toString());
-		labelWetter[0].setText("" + soilSensorRead.wetterLux());
-		labelWetter[1].setText("" + bmeSensorRead.wetter());
+		labelWetter[0].setText("" + bmeSensorRead.wetter());
+		labelWetter[1].setText("" + soilSensorRead.wetterLux());
 		labelWetter[2].setText("" + soilSensorRead.wetterTemp());
 		labelWetter[3].setText("" + soilSensorRead.wetterErd());
 	}
