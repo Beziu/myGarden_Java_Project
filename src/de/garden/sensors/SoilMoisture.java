@@ -77,7 +77,7 @@ public class SoilMoisture {
 	 * Here we use sunlight 'lux' parametr to know how<br> 
 	 * cloudy is sky right now<br><br>
 	 * 
-	 * We hawe 4 strings outputs possibilitys<br>
+	 * We have 4 strings outputs possibilitys<br>
 	 * '0 - 24'   no sunlight, night<br>
 	 * '25 - 49'  cloudy sky, no sunlight, maybe rain come<br>
 	 * '50 - 74'  partly clouds and sun<br>
@@ -101,39 +101,46 @@ public class SoilMoisture {
 	}
 	
 	/**
-	 * Here we use sunlight 'lux' parametr to know how<br> 
-	 * cloudy is sky right now<br><br>
+	 * Here we use 'moinsture' parametr to know how<br> 
+	 * soil moinsture is in erde<br><br>
 	 * 
-	 * We hawe 4 strings outputs possibilitys<br>
-	 * '0 - 24'   no sunlight, night<br>
-	 * '25 - 49'  cloudy sky, no sunlight, maybe rain come<br>
-	 * '50 - 74'  partly clouds and sun<br>
-	 * '75 - 100' fullsunlight, day, no clouds<br><br>
+	 * We have 2 strings outputs possibilitys<br>
+	 * '0 - 49'  Erde is dry<br>
+	 * '50 - 100' Erde is wet<br><br>
 	 * 
-	 * @return how dry erd is right now
+	 * @return how dry erde is right now
 	 */
 	public String wetterErd() {
 		if (moisture < 50) {
 			return DRY.getText();
 		}
 		else {
-			return NICE.getText();
+			return WET.getText();
 		}
 	}
 	
+	/**
+	 * Here we use 'temperature' parametr to know<br> 
+	 * how will plants grows<br><br>
+	 * 
+	 * We have 3 strings outputs possibilitys<br>
+	 * '0 - 16'  It is to cold<br>
+	 * '17 - 21'  It is optimal<br>
+	 * '22 - and higer' It is comfortable<br><br>
+	 * 
+	 * @return actual string wether
+	 */
 	public String wetterTemp() {
-		if (temperature < 15) {
+		if (temperature < 17) {
 			return COLD.getText();
 		}
-		else if (temperature >=15 & temperature < 22) {
+		else if (temperature >=17 & temperature < 22) {
 			return SUN.getText();
 		}
 		else {
 			return HOT.getText();
 		}
 	}
-	
-	
 	
 	/**
 	 * Getter for temperature
