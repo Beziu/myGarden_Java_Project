@@ -73,13 +73,23 @@ public class Bme250 {
 //	*				 Functions
 //	*******************************************	
 	
-	
+	/**
+	 * Here we use 'humidity' parametr to know how<br> 
+	 * humid is in air<br><br>
+	 * 
+	 * We have 3 strings outputs possibilitys<br>
+	 * '0 - 29'  air is to dry<br>
+	 * '30 - 74'  Is is regular<br>
+	 * '75 - 100' a lot water in air<br><br>
+	 * 
+	 * @return how dry air is right now
+	 */
 	public String wetter() {
 		if (humidity < 30) {
-			return DRY.getText();
+			return AIR.getText();
 		}
-		else if (humidity >=30 & humidity < 74) {
-			return NICE.getText();
+		else if (humidity >=30 & humidity < 75) {
+			return HUMID.getText();
 		}
 		else {
 			return RAIN.getText();
