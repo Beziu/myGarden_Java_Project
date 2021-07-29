@@ -83,7 +83,9 @@ public class SoilMoistureOutput extends JPanel {
 
 	}
 	
-	
+	/**
+	 * Build methode
+	 */
 	private void build() {	
 		repaint();
 	}
