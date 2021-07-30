@@ -257,7 +257,6 @@ public class MainTab extends JPanel {
 			
 			if (soilSensorRead.getMoisture() < 50) {
 				pumpAuto.setState(true);
-				//labelValue[8].setText(pumpAuto.toString());
 				water.start();
 				System.out.println(pumpAuto.toStringConsole());
 			}
@@ -296,10 +295,7 @@ public class MainTab extends JPanel {
 			add(unit[i], i);
 		}
 		
-//		unit[9] = new JPanel();
-//		unit[9].
 		add(btnStart);
-//		add(unit[9], 9);
 		
 		unit[10] = new JPanel();
 		unit[10].setLayout(new GridLayout(4, 1));
@@ -309,10 +305,7 @@ public class MainTab extends JPanel {
 		unit[10].add(labelWetter[3], 3);
 		add(unit[10], 10);
 		
-//		unit[11] = new JPanel();
-//		unit[11].
 		add(btnRefresh);
-//		add(unit[11], 11);
 		
 	}
 
