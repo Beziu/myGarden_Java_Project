@@ -18,6 +18,7 @@ import de.garden.backend.SoilMoistureDB;
 import de.garden.backend.SoilMoistureDataBaseFunctions;
 import de.garden.middlepart.*;
 import de.garden.sensors.WaterPump;
+import de.garden.sensors.WindSensor;
 
 import static de.garden.sensors.SensorsSettings.*;
 
@@ -45,6 +46,11 @@ public class MainTab extends JPanel {
 	 * To have a control of the water pump
 	 */
 	WaterPump pump = new WaterPump();
+	
+	/**
+	 * To view walues of wind
+	 */
+	WindSensor wind = new WindSensor();
 	
 	/**
 	 * To control a water pump witch timer
