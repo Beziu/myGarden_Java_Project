@@ -51,6 +51,9 @@ public class MainWindow extends JFrame {
 	/** Element in menu. */
 	private JMenuItem menuPump = new JMenuItem("Water Pump");
 	
+	/** Element in menu. */
+	private JMenuItem menuWind = new JMenuItem("Wind Sensor");
+	
 	/** JTabbedPane element */
 	private TabsOrganisator mainBuilder = new TabsOrganisator();
 	
@@ -88,6 +91,7 @@ public class MainWindow extends JFrame {
 		menuBme.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getBme250Tab()));
 		menuIna.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getIna219Tab()));
 		menuPump.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getWaterPumpTab()));
+		menuWind.addActionListener(e -> mainBuilder.setSelectedComponent(mainBuilder.getWindSensorTab()));
 	}
 
 	/**
@@ -104,6 +108,7 @@ public class MainWindow extends JFrame {
 		menuExtra.add(menuBme);
 		menuExtra.add(menuIna);
 		menuExtra.add(menuPump);
+		menuExtra.add(menuWind);
 		
 		setJMenuBar(menuBar);
 	}

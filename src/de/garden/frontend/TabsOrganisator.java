@@ -46,6 +46,11 @@ public class TabsOrganisator extends JTabbedPane {
 	 */
 	private WaterPumpTab pumpTab = new WaterPumpTab();
 	
+	/**
+	 * Add element WindSensorTab to Tabs in tabbed window
+	 */
+	private WindSensorTab windTab = new WindSensorTab();
+	
 //	*******************************************
 //	*				Konstruktors
 //	*******************************************
@@ -71,12 +76,14 @@ public class TabsOrganisator extends JTabbedPane {
 		bmeTab.setBackground(Color.DARK_GRAY);
 		inaTab.setBackground(Color.DARK_GRAY);
 		pumpTab.setBackground(Color.DARK_GRAY);
+		windTab.setBackground(Color.DARK_GRAY);
 		
 		add(mainTab, "Informations");
 		add(soilTab, "SoilMoisture");
 		add(bmeTab, "BME 250");
 		add(inaTab, "INA 219");
 		add(pumpTab, "Water Pump");
+		add(windTab, "Wind Sensor");
 	}
 	
 	/**
@@ -117,6 +124,14 @@ public class TabsOrganisator extends JTabbedPane {
 	 */
 	public WaterPumpTab getWaterPumpTab() {
 		return pumpTab;
+	}
+	
+	/**
+	 * Getter to tab.
+	 * @return WindSensorTab
+	 */
+	public WindSensorTab getWindSensorTab() {
+		return windTab;
 	}
 	
 }
