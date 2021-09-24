@@ -1,3 +1,3 @@
-# myGarden_Java_Project
+Garden irrigation control system.
 
 Garden irrigation system with sensor simulation.
