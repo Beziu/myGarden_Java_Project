@@ -30,7 +30,6 @@ public class WindSensorTab extends JPanel {
 	
 	private void build() {
 		JPanel label = new JPanel();
-		label.add(getParent());
-		
+		//label.add(getParent());
 	}
 }
